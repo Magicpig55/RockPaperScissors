@@ -11,6 +11,16 @@ public class Hand : MonoBehaviour {
 		}
 	}
 
+	private bool _showInput;
+	public bool ShowInput {
+		get {
+			return _showInput;
+		}
+		set {
+
+		}
+	}
+
 	public enum HandState {
 		Shaking,
 		Rock,
@@ -25,6 +35,8 @@ public class Hand : MonoBehaviour {
 
 	public void SetState(HandState state) {
 		ClearAllAnim();
+		if(CurrentHandState != HandState.Shaking)
+			animator.SetTrigger("Reset");
 		_handstate = state;
 		switch (state) {
 		case HandState.Rock: {
@@ -43,7 +55,7 @@ public class Hand : MonoBehaviour {
 			break;
 		}
 		default: {
-			animator.SetTrigger("Reset");
+
 			break;
 		}
 		}
