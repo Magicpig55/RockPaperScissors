@@ -11,16 +11,6 @@ public class Hand : MonoBehaviour {
 		}
 	}
 
-	private bool _showInput;
-	public bool ShowInput {
-		get {
-			return _showInput;
-		}
-		set {
-
-		}
-	}
-
 	public enum HandState {
 		Shaking,
 		Rock,
